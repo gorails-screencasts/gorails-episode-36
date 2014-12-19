@@ -1,0 +1,9 @@
+<h1><%= @actor.name %></h1>
+<%= image_tag @actor.image_url %>
+<%= simple_format @actor.description %>
+
+<%= render partial: "comments/comments", locals: {commentable: @actor} %>
+<%= render partial: "comments/form", locals: {commentable: @actor} %>
+
+<%= link_to 'Edit', edit_actor_path(@actor) %> |
+<%= link_to 'Back', actors_path %>

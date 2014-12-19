@@ -1,0 +1,9 @@
+<h1><%= @film.title %></h1>
+<%= image_tag @film.image_url %>
+<%= simple_format @film.description %>
+
+<%= render partial: "comments/comments", locals: {commentable: @film} %>
+<%= render partial: "comments/form", locals: {commentable: @film} %>
+
+<%= link_to 'Edit', edit_film_path(@film) %> |
+<%= link_to 'Back', films_path %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Actors</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @actors.each do |actor| %>
+      <tr>
+        <td><%= link_to image_tag(actor.image_url, style: "height:150px"), actor %></td>
+        <td><%= link_to actor.name, actor %></td>
+        <td><%= link_to 'Edit', edit_actor_path(actor) %> | <%= link_to 'Destroy', actor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Actor', new_actor_path %>
