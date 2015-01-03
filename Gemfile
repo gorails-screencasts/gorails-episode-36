@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0.rc1'
+gem 'rails', '~> 4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -45,3 +45,8 @@ end
 
 gem 'bootstrap-sass'
 gem 'devise'
+
+gem 'annotate'
+
+gem "mini_magick"
+gem 'refile', '~> 0.4.2', require: ["refile/rails", "refile/image_processing"]

@@ -14,7 +14,7 @@
   <tbody>
     <% @actors.each do |actor| %>
       <tr>
-        <td><%= link_to image_tag(actor.image_url, style: "height:150px"), actor %></td>
+        <td><%= link_to image_tag(attachment_url(actor, :image, :fill, 150, 150)), actor %></td>
         <td><%= link_to actor.name, actor %></td>
         <td><%= link_to 'Edit', edit_actor_path(actor) %> | <%= link_to 'Destroy', actor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

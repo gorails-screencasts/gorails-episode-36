@@ -1,5 +1,5 @@
 <h1><%= @film.title %></h1>
-<%= image_tag @film.image_url %>
+<%= image_tag attachment_url(@film, :image, :fill, 300, 300) %>
 <%= simple_format @film.description %>
 
 <%= render partial: "comments/comments", locals: {commentable: @film} %>

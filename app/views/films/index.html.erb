@@ -14,7 +14,7 @@
   <tbody>
     <% @films.each do |film| %>
       <tr>
-        <td><%= link_to image_tag(film.image_url, style: "height: 150px"), film %></td>
+        <td><%= link_to image_tag(attachment_url(film, :image, :fill, 250, 150)), film %></td>
         <td><%= link_to film.title, film %></td>
         <td><%= link_to 'Edit', edit_film_path(film) %> | <%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

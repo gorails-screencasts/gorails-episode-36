@@ -20,8 +20,15 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
+    <%= f.label :image %><br>
+    <%= f.attachment_field :image %>
+
+    <% if @actor.image_id? %>
+      <%= image_tag attachment_url(@actor, :image, :fill, 100, 100) %>
+
+      <%= f.check_box :remove_image %>
+      <%= f.label :remove_image %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>
