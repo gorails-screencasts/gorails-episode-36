@@ -21,7 +21,9 @@
   </div>
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.attachment_field :image %>
+    <%= f.attachment_field :image, direct: true %>
+
+    <div id="image"></div>
 
     <% if @film.image_id? %>
       <%= image_tag attachment_url(@film, :image, :fill, 100, 100) %>
@@ -31,6 +33,6 @@
     <% end %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
