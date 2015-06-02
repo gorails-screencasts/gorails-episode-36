@@ -11,7 +11,8 @@ jQuery ->
   $(document).on "upload:success", "form", (e) ->
     $(this).find("input[type=submit]").removeAttr "disabled"  unless $(this).find("input.uploading").length
 
-    image_id = $("#film_image_cache_id").val()
+    image_info = $("input[name='film[image]']").val()
+    image_id = JSON.parse(image_info).id
     $("#image").html $("<img />").attr(
       src: "/attachments/cache/fill/150/150/#{image_id}/image"
     )

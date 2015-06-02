@@ -49,4 +49,5 @@ gem 'devise'
 gem 'annotate'
 
 gem "mini_magick"
-gem 'refile', '~> 0.4.2', require: ["refile/rails", "refile/image_processing"]
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
